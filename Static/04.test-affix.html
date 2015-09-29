@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #box {
+            width: 1000px;
+            height: 5000px;
+
+            background-color: blue;
+        }
+
+        #drawer {
+            width: 300px;
+            height: 50px;
+
+            display: block;
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    function btnClick() {
+        $('#myAffix').affix({
+            offset: {
+                top: 100,
+                bottom: function () {
+                    return (this.bottom = $('.footer').outerHeight(true))
+                }
+            }
+        })
+    }
+
+</script>
+<button onclick="btnCli()" class="btn btn-default">
+    affix
+
+</button>
+<div id="box">
+    <div id="drawer"data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+
+
+    </div>
+
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
